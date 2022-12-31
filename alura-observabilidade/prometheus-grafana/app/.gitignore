@@ -2,7 +2,6 @@
 
 *.jar
 !libs/**/*.jar
-!target/**/*.jar
 
 .classpath
 .project
