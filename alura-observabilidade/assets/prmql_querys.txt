@@ -1,0 +1,11 @@
+(sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api"}[5m])) / sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api", status!~ "200"}[5m]))) > (sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api"}[3h])) / sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api", status!~ "200"}[3h])))
+
+(sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api", status =~ "200"}[5m])) / sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api", status != "200"}[5m]))) > (sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api", status =~ "200"}[3h])) / sum(avg_over_time(http_server_requests_seconds_count{job="app-forum-api", status != "200"}[3h])))
+
+(auth_user_success_total / auth_user_errors_total) < 5
+
+http_server_requests_seconds_count{application="app-forum-api", method=~"GET|POST", status!~"2..|3..", uri != "/actuator/prometheus"} offset 1m
+
+sum(increase(http_server_requests_seconds_count{application="app-forum-api", uri != "/actuator/prometheus"}[5m]))
+
+irate(http_server_requests_seconds_count{application="app-forum-api", uri != "/actuator/prometheus"}[5m])
