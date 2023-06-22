@@ -1,0 +1,3 @@
+1 - acessar o app
+2 - abrir o git bash dentro do diretorio
+3 - executar o comando: sh start.sh

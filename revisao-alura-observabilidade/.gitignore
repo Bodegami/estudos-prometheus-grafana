@@ -1,0 +1,13 @@
+*.sql
+
+*.jar
+!libs/**/*.jar
+!target/**/*.jar
+
+.classpath
+.project
+.settings/
+target/
+
+*.dump
+
