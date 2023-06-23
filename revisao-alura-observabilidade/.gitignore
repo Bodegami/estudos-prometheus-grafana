@@ -11,3 +11,4 @@ target/
 
 *.dump
 
+**/prometheus_data/*
